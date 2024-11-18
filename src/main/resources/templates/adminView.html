@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Administrador</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" />
+<link rel="stylesheet" th:href="@{/css/admin.css}">
+</head>
+<body>
+	<div class="container">
+		<header class="header" style="margin-top: 2vh;">
+			<div class="d-flex justify-content-start container">
+				<a th:href="@{/login/logout}" class="btn btn-danger out"> <i
+					class="fas fa-arrow-left">&nbsp;Cerrar sesión</i>
+				</a>
+				<h2 th:text="'Bienvenid@ ' + ${session.usuario.usuario}"
+					style="position: absolute; left: 50%; transform: translateX(-50%); text-align: center;"></h2>
+			</div>
+		</header>
+		<div class="container py-5">
+			<div class="text-center mb-4">
+				<h1 class="display-5">Panel de Administración</h1>
+			</div>
+			<div class="d-flex justify-content-center gap-3">
+				<a th:href="@{/bibliotecarios}" class="btn btn-primary custom-btn">
+					<i class="fas fa-user-tie"></i>&nbsp;Bibliotecarios
+				</a> <a th:href="@{/usuarios}" class="btn btn-success custom-btn"> <i
+					class="fas fa-users"></i>&nbsp;Usuarios
+				</a>
+				<a th:href="@{/libros}" class="btn btn-info custom-btn" style="color: white"> <i
+					class="fas fa-book"></i>&nbsp;Libros
+				</a>
+			</div>
+		</div>
+		<div class="container">
+			<img alt="UTS"
+				src="/img/book-boy.png"
+				class="d-block mx-auto" width="500vw" height="500vh">
+		</div>
+	</div>
+</body>
+</html>
